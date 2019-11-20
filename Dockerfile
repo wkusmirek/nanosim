@@ -14,3 +14,9 @@ RUN apt-get install -y zlib1g-dev libbz2-dev liblzma-dev
 RUN pip install -r /NanoSim/requirements.txt
 
 ENV PATH="/NanoSim/src/:${PATH}"
+
+RUN git clone https://github.com/lh3/minimap2
+
+RUN cd minimap2 && make
+
+ENV PATH="/minimap2/:${PATH}"
